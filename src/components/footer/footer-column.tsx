@@ -1,0 +1,130 @@
+import React from "react";
+import Link from "next/link";
+import { css } from "../../../styled-system/css";
+import { container } from "../../../styled-system/patterns";
+
+type FooterColumn = {
+  title: string;
+  items: string[];
+};
+
+const footerColumns: FooterColumn[] = [
+  {
+    title: "Products",
+    items: [
+      "Invoice",
+      "Point of sale",
+      "Expense",
+      "Online Market",
+      "Migration",
+      "Marketplace",
+      "Sales Channels",
+      "Sales",
+      "Checkout",
+      "Inventory",
+    ],
+  },
+  {
+    title: "Resources",
+    items: [
+      "Overview",
+      "Articles",
+      "Guides",
+      "Webinars",
+      "Podcast",
+      "Events",
+      "Ecommerce blog",
+      "Developer blog",
+    ],
+  },
+  {
+    title: "Partner",
+    items: [
+      "Overview",
+      "Become a partner",
+      "Find a partner",
+      "Affiliates",
+      "Partner offers",
+    ],
+  },
+  {
+    title: "Customer",
+    items: ["Case studies", "Store examples"],
+  },
+];
+
+const footerStyle = css({
+  bg: "gray.100",
+  color: "gray.900",
+  py: "12",
+  w: "1600px",
+  mx: "auto",
+  px: "160px",
+});
+
+const containerStyle = css({
+  maxWidth: "1280px",
+  mx: "auto",
+});
+
+const gridStyle = css({
+  display: "grid",
+  gridTemplateColumns: "repeat(4, 1fr)",
+  gap: "200px",
+});
+
+const titleStyle = css({
+  fontSize: "18px",
+  fontWeight: "700",
+  lineHeight: "23.49px",
+  mb: "30px",
+  color: "gray.900",
+});
+
+const listStyle = css({
+  display: "flex",
+  flexDirection: "column",
+  gap: "16px",
+});
+
+const linkStyle = css({
+  fontSize: "16px",
+  fontWeight: "400",
+  lineHeight: "19.36px",
+  color: "gray.500",
+  _hover: {
+    color: "gray.700",
+  },
+  transition: "colors",
+  transitionDuration: "normal",
+});
+
+const FooterColumn: React.FC = () => {
+  return (
+    <footer className={footerStyle}>
+      <div className={containerStyle}>
+        <div className={gridStyle}>
+          {footerColumns.map((footerColumn, index) => (
+            <div key={index}>
+              <h2 className={titleStyle}>{footerColumn.title}</h2>
+              <ul className={listStyle}>
+                {footerColumn.items.map((item, itemIndex) => (
+                  <li key={itemIndex}>
+                    <Link
+                      href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                      className={linkStyle}
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default FooterColumn;
