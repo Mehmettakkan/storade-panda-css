@@ -9,8 +9,8 @@ const SliderContent: React.FC = () => {
     <div className={css({
       width: "799px",
       height: "541px",
-      mt: "72",
-      ml: "40",
+      //mt: "72",
+      //ml: "40",
       padding: "16",
     })}>
       <h2 className={css({
@@ -56,7 +56,7 @@ const SliderContent: React.FC = () => {
       })}>
         <Button 
           variant="primary"
-          size="md"
+          size="lg"
         >
           GET STARTED
         </Button>

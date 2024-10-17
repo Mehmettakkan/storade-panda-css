@@ -23,21 +23,23 @@ const FooterNavigation: React.FC = () => {
   return (
     <footer className={css({ 
       bg: "#0E0E0E", 
-      color: "white", 
-      w: "1600px", 
-      h: "180px",
+      color: "base.white", 
+      w: "container.3xl", // 1600px
+      h: "48",
       mx: "auto",
-      px: "160px",
+      px: "40", // 160px için en yakın token değeri
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
     })}>
       <div className={container({ 
-        maxWidth: "1280px",
-        mx: "auto", 
-        h: "full",
+        maxWidth: "container.2xl", // 1280px
+        w: "full",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
       })}>
-        <div className={flex({ alignItems: "center", gap: "200px" })}>
+        <div className={flex({ alignItems: "center" })}>
           <Link href="/" className={css({ display: "flex", flexDirection: "column" })}>
             <Image
               src="/images/logo-white.svg"
@@ -47,35 +49,43 @@ const FooterNavigation: React.FC = () => {
               className={css({
                 width: "150px",
                 height: "28.8px",
-                mb: "10px",
+                mb: "2.5", // 10px
               })}
             />
             <span className={css({ 
               display: "block", 
               whiteSpace: "nowrap", 
-              fontSize: "14px", 
-              fontWeight: "400", 
+              fontSize: "sm", // 14px
+              fontWeight: "normal",
               lineHeight: "18.27px", 
               color: "gray.400", 
-              width: "256px",
-              height: "18px",
+              width: "64", // 256px
+              height: "4", // 18px
             })}>
               Everything you need for your business
             </span>
           </Link>
         </div>
         <nav className={flex({ alignItems: "center" })}>
-          <div className={css({ h: "8", w: "1px", bg: "gray.600", mr: "30px" })}></div>
+        <span className={css({ 
+            mr: "3.5", 
+            color: "gray.600",
+            fontSize: "xl", // 20px için en yakın değer
+            lineHeight: "none",
+            display: "inline-flex",
+            alignItems: "center",
+            height: "8", // Orijinal dikey çizgi ile aynı yükseklik
+          })}>|</span>
           {footerNavigations.map((item, index) => (
             <React.Fragment key={item.name}>
               <Link
                 href={item.href}
                 className={css({
-                  fontSize: "14px",
+                  fontSize: "sm", // 14px
                   fontWeight: "900",
                   lineHeight: "16.94px",
                   whiteSpace: "nowrap",
-                  color: "white",
+                  color: "base.white",
                   position: "relative",
                   transition: "color 0.2s",
                   _hover: { 
@@ -99,7 +109,7 @@ const FooterNavigation: React.FC = () => {
                 {item.name}
               </Link>
               {index < footerNavigations.length - 1 && (
-                <div className={css({ mx: "15px" })}></div>
+                <div className={css({ mx: "3.5" })}></div> // 15px için en yakın değer
               )}
             </React.Fragment>
           ))}

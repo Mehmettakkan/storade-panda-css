@@ -57,40 +57,40 @@ const footerStyle = css({
   bg: "gray.100",
   color: "gray.900",
   py: "12",
-  w: "1600px",
+  w: "container.3xl",
   mx: "auto",
-  px: "160px",
+  px: "40", // 160px = 40 * 4px (base size)
 });
 
 const containerStyle = css({
-  maxWidth: "1280px",
+  maxWidth: "container.2xl",
   mx: "auto",
 });
 
 const gridStyle = css({
   display: "grid",
   gridTemplateColumns: "repeat(4, 1fr)",
-  gap: "200px",
+  gap: "52", // 200px = 50 * 4px
 });
 
 const titleStyle = css({
-  fontSize: "18px",
-  fontWeight: "700",
-  lineHeight: "23.49px",
-  mb: "30px",
+  fontSize: "lg",
+  fontWeight: "bold",
+  lineHeight: "normal",
+  mb: "8", // 30px ~= 8 * 4px
   color: "gray.900",
 });
 
 const listStyle = css({
   display: "flex",
   flexDirection: "column",
-  gap: "16px",
+  gap: "4", // 16px = 4 * 4px
 });
 
 const linkStyle = css({
-  fontSize: "16px",
-  fontWeight: "400",
-  lineHeight: "19.36px",
+  fontSize: "md",
+  fontWeight: "normal",
+  lineHeight: "normal",
   color: "gray.500",
   _hover: {
     color: "gray.700",

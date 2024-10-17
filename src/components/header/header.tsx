@@ -94,7 +94,7 @@ const Header = () => {
         bg: "bg-primary",
         position: "sticky",
         top: "0",
-        zIndex: "docked",
+        zIndex: "{zIndices.docked}",
       })}
     >
       <div
@@ -200,7 +200,7 @@ const Header = () => {
             transform: "translateX(-50%)",
             width: "full",
             maxWidth: "container.xl",
-            zIndex: "dropdown",
+            zIndex: "{zIndices.dropdown}",
             transition:
               "opacity {animations.durations.normal} {animations.easings.easeInOut}",
           })}

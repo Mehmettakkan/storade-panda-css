@@ -17,16 +17,16 @@ const footerBottoms: FooterBottom[] = [
 ];
 
 const footerStyle = css({
-  bg: "#0a0f1a",
-  color: "white",
-  height: "62px",
-  width: "1600px",
+  bg: "gray.900",
+  color: "base.white",
+  height: "16",
+  width: "container.3xl",
   margin: "0 auto",
-  px: "160px", // Add 160px padding on both sides
+  px: "40", // 160px = 40 * 4px (base size)
 });
 
 const containerStyle = container({
-  maxWidth: "1280px",
+  maxWidth: "container.2xl",
   height: "full",
   mx: "auto",
 });
@@ -39,31 +39,31 @@ const contentStyle = css({
 });
 
 const copyrightStyle = css({
-  width: "134px",
-  height: "19px",
-  fontSize: "16px",
-  fontWeight: "400",
-  lineHeight: "19.36px",
+  width: "32", // 134px = 33.5 * 4px (rounded up)
+  height: "5", // 19px ~= 5 * 4px
+  fontSize: "md",
+  fontWeight: "normal",
+  lineHeight: "normal",
 });
 
 const menuStyle = css({
   display: "flex",
-  gap: "30px",
+  gap: "8", // 30px ~= 8 * 4px
 });
 
 const linkStyle = css({
-  fontSize: "14px",
-  fontWeight: "400",
-  lineHeight: "16.94px",
+  fontSize: "sm",
+  fontWeight: "normal",
+  lineHeight: "normal",
   _hover: { color: "gray.300" },
 });
 
 const languageStyle = css({
   display: "flex",
   alignItems: "center",
-  fontSize: "14px",
-  fontWeight: "400",
-  lineHeight: "16.94px",
+  fontSize: "sm",
+  fontWeight: "normal",
+  lineHeight: "normal",
 });
 
 const FooterBottom: React.FC = () => {
