@@ -63,7 +63,7 @@ const footerStyle = css({
 });
 
 const containerStyle = css({
-  maxWidth: "container.2xl",
+  maxWidth: "container.xl",
   mx: "auto",
 });
 
