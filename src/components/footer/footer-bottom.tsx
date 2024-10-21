@@ -16,78 +16,69 @@ const footerBottoms: FooterBottom[] = [
   { name: "Sales and Refunds", href: "/sales-and-refunds" },
 ];
 
-const footerStyle = css({
-  bg: "gray.900",
-  color: "base.white",
-  height: "16",
-  width: "container.3xl",
-  margin: "0 auto",
-  px: "40", // 160px = 40 * 4px (base size)
-});
-
-const containerStyle = container({
-  maxWidth: "container.2xl",
-  height: "full",
-  mx: "auto",
-});
-
-const contentStyle = css({
-  height: "full",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-});
-
-const copyrightStyle = css({
-  width: "32", // 134px = 33.5 * 4px (rounded up)
-  height: "5", // 19px ~= 5 * 4px
-  fontSize: "md",
-  fontWeight: "normal",
-  lineHeight: "normal",
-});
-
-const menuStyle = css({
-  display: "flex",
-  gap: "8", // 30px ~= 8 * 4px
-});
-
-const linkStyle = css({
-  fontSize: "sm",
-  fontWeight: "normal",
-  lineHeight: "normal",
-  _hover: { color: "gray.300" },
-});
-
-const languageStyle = css({
-  display: "flex",
-  alignItems: "center",
-  fontSize: "sm",
-  fontWeight: "normal",
-  lineHeight: "normal",
-});
-
 const FooterBottom: React.FC = () => {
   return (
-    <footer className={footerStyle}>
-      <div className={containerStyle}>
-        <div className={contentStyle}>
-          <p className={copyrightStyle}>2022 Storade Co.</p>
+    <footer className={css({
+      bg: "{colors.gray.900}",
+      color: "{colors.base.white}",
+      w: { base: "full", md: "container.md", lg: "container.lg", xl: "container.xl", "2xl": "container.2xl" },
+      minH: { base: "auto", md: "{sizes.16}" },
+      mx: "auto",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    })}>
+      <div className={container({
+        maxWidth: { base: "full", md: "container.md", lg: "container.lg", xl: "container.xl", "2xl": "container.2xl" },
+        w: "full", 
+        px: { base: "4", md: "6", lg: "8", xl: "16", "2xl": "24" },
+        py: { base: "4", md: "5" },
+        display: "flex",
+        flexDirection: { base: "column", md: "row" },
+        alignItems: "center",
+        justifyContent: { base: "center", md: "space-between" },
+        gap: { base: "{spacing.4}", md: "{spacing.8}" },
+      })}>
+        <p className={css({
+          fontSize: "{fontSizes.sm}",
+          fontWeight: "{fontWeights.normal}",
+          lineHeight: "{lineHeights.normal}",
+          order: { base: "3", md: "1" },
+        })}>
+          &copy; 2022 Storade Co.
+        </p>
 
-          <ul className={menuStyle}>
-            {footerBottoms.map((item, index) => (
-              <li key={index}>
-                <Link href={item.href} className={linkStyle}>
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <ul className={flex({
+          flexWrap: "wrap",
+          justifyContent: { base: "center", md: "flex-start" },
+          gap: { base: "{spacing.4}", md: "{spacing.8}" },
+          order: { base: "1", md: "2" },
+        })}>
+          {footerBottoms.map((item) => (
+            <li key={item.name}>
+              <Link href={item.href} className={css({
+                fontSize: "{fontSizes.sm}",
+                fontWeight: "{fontWeights.normal}", 
+                lineHeight: "{lineHeights.normal}",
+                _hover: { color: "{colors.gray.300}" },
+              })}>
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-          <div className={languageStyle}>
-            <Globe size={13} className={css({ marginRight: "1.5" })} />
-            <span className={css({ marginRight: "1" })}>USA - EN</span>
-            <ChevronDown size={13} />
-          </div>
+        <div className={flex({
+          alignItems: "center",
+          gap: "{spacing.2}",
+          fontSize: "{fontSizes.sm}",
+          fontWeight: "{fontWeights.normal}",
+          lineHeight: "{lineHeights.normal}", 
+          order: { base: "2", md: "3" },
+        })}>
+          <Globe size={16} />
+          <span>USA - EN</span>
+          <ChevronDown size={16} />
         </div>
       </div>
     </footer>
