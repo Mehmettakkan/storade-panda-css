@@ -101,9 +101,9 @@ const MegamenuTemplate: React.FC<MegamenuTemplateProps> = ({ sections, support }
                       cursor: 'pointer',
                       bg: 'transparent',
                       _hover: { 
-                        bg: 'bg-secondary',
-                        boxShadow: 'elevation.md',
-                        transform: 'translateY(-2px)',
+                        bg: 'base.white',
+                        boxShadow: 'elevation.sm',
+                        // transform: 'translateY(-2px)',
                       },
                     })}
                   >
@@ -161,9 +161,9 @@ const MegamenuTemplate: React.FC<MegamenuTemplateProps> = ({ sections, support }
                   bg: 'base.white',
                   transition: 'all {animations.durations.fast} {animations.easings.easeInOut}',
                   _hover: { 
-                    bg: 'bg-secondary',
-                    boxShadow: 'elevation.md',
-                    transform: 'translateY(-2px)',
+                    bg: 'base.white',
+                    boxShadow: 'elevation.sm',
+                    // transform: 'translateY(-2px)',
                   },
                 })}>
                   <Icon size="support">{item.icon}</Icon>

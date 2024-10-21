@@ -1,3 +1,4 @@
+import MobileMegamenuTemplate from '@/components/mega-menu/mobile-mega-menu-template';
 import React from 'react';
 import {
   FaBook,
@@ -7,30 +8,29 @@ import {
   FaChalkboardTeacher,
   FaToolbox,
 } from 'react-icons/fa';
-import MobileMegamenuTemplate from '../../../../components/megamenu/mobile-mega-menu-template';
 
 const MobileMegaMenuContentResources: React.FC = () => {
   const resources = [
     {
-      icon: <FaBlog className="w-6 h-6 text-blue-500" />,
+      icon: <FaBlog />,
       title: "Blog",
       description: "Read the latest insights and updates on our blog.",
       link: "/resources/blog",
     },
     {
-      icon: <FaBook className="w-6 h-6 text-blue-500" />,
+      icon: <FaBook />,
       title: "Guides & Documentation",
       description: "Comprehensive guides and documentation to get you started.",
       link: "/resources/guides-documentation",
     },
     {
-      icon: <FaVideo className="w-6 h-6 text-blue-500" />,
+      icon: <FaVideo />,
       title: "Webinars",
       description: "Watch our latest webinars and video content.",
       link: "/resources/webinars",
     },
     {
-      icon: <FaFileAlt className="w-6 h-6 text-blue-500" />,
+      icon: <FaFileAlt />,
       title: "Case Studies",
       description: "Learn how others are successfully using our platform.",
       link: "/resources/case-studies",
@@ -41,14 +41,14 @@ const MobileMegaMenuContentResources: React.FC = () => {
     title: "Support",
     items: [
       {
-        icon: <FaToolbox className="w-5 h-5 text-blue-500" />,
+        icon: <FaToolbox />,
         title: "Developer Portal",
         description: "Access technical documentation and developer tools.",
         linkText: "Visit Developer Portal",
         link: "/support/developer-portal",
       },
       {
-        icon: <FaChalkboardTeacher className="w-5 h-5 text-blue-500" />,
+        icon: <FaChalkboardTeacher />,
         title: "Webinar Support",
         description: "Need help with webinars? Our team is here to assist.",
         linkText: "Get Webinar Support",

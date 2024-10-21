@@ -1,3 +1,4 @@
+import MobileMegamenuTemplate from '@/components/mega-menu/mobile-mega-menu-template';
 import React from 'react';
 import {
   FaUserTie,         // CRM Integration
@@ -9,42 +10,41 @@ import {
   FaPlug,
   FaCodeBranch,
 } from 'react-icons/fa';
-import MobileMegamenuTemplate from '../../../../components/megamenu/mobile-mega-menu-template';
 
 const MobileMegaMenuContentIntegrations: React.FC = () => {
   const integrations = [
     {
-      icon: <FaUserTie className="w-6 h-6 text-blue-500" />,
+      icon: <FaUserTie />,
       title: "CRM Integration",
       description: "Seamlessly integrate with leading CRM platforms.",
       link: "/integrations/crm",
     },
     {
-      icon: <FaSitemap className="w-6 h-6 text-blue-500" />,
+      icon: <FaSitemap />,
       title: "ERP Integration",
       description: "Connect your ERP system for real-time data sync.",
       link: "/integrations/erp",
     },
     {
-      icon: <FaMoneyCheckAlt className="w-6 h-6 text-blue-500" />,
+      icon: <FaMoneyCheckAlt />,
       title: "Payment Gateways",
       description: "Easily integrate payment gateways for smooth transactions.",
       link: "/integrations/payment-gateways",
     },
     {
-      icon: <FaFileInvoiceDollar className="w-6 h-6 text-blue-500" />,
+      icon: <FaFileInvoiceDollar />,
       title: "Accounting Software",
       description: "Integrate with popular accounting software for seamless financial tracking.",
       link: "/integrations/accounting-software",
     },
     {
-      icon: <FaChartBar className="w-6 h-6 text-blue-500" />,
+      icon: <FaChartBar />,
       title: "Marketing Tools",
       description: "Connect with top marketing tools to boost your campaigns.",
       link: "/integrations/marketing-tools",
     },
     {
-      icon: <FaCloudUploadAlt className="w-6 h-6 text-blue-500" />,
+      icon: <FaCloudUploadAlt />,
       title: "Cloud Storage",
       description: "Integrate with cloud storage services for easy file management.",
       link: "/integrations/cloud-storage",
@@ -55,14 +55,14 @@ const MobileMegaMenuContentIntegrations: React.FC = () => {
     title: "Support",
     items: [
       {
-        icon: <FaPlug className="w-5 h-5 text-blue-500" />,
+        icon: <FaPlug />,
         title: "Integration Help",
         description: "Need help with integrating? Our support team is here to assist you.",
         linkText: "Get support",
         link: "/support/integration-help",
       },
       {
-        icon: <FaCodeBranch className="w-5 h-5 text-blue-500" />,
+        icon: <FaCodeBranch />,
         title: "API Documentation",
         description: "Visit our developer portal for detailed API documentation.",
         linkText: "View API Docs",
