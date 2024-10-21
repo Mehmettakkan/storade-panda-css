@@ -1,5 +1,6 @@
 import { defineConfig } from "@pandacss/dev";
-import { tokens, semanticTokens } from './src/thema'
+import { tokens } from "./src/thema/tokens";
+import { semanticTokens } from "./src/thema/semanticTokens"; // varsayımsal yol, gerçek yol farklı olabilir
 
 export default defineConfig({
   // CSS reset ve temel stiller
