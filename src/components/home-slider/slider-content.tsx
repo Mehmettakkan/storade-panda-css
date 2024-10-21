@@ -6,66 +6,89 @@ import Link from "next/link";
 
 const SliderContent: React.FC = () => {
   return (
-    <div className={css({
-      width: "799px",
-      height: "541px",
-      //mt: "72",
-      //ml: "40",
-      padding: "16",
-    })}>
-      <h2 className={css({
-        fontSize: "lg",
-        fontWeight: "bold",
-        lineHeight: "normal",
-        letterSpacing: "14px",
-        textAlign: "left",
-        mb: "2.5",
-      })}>
+    <div
+      className={css({
+        width: "100%",
+        maxWidth: { base: "100%", md: "799px" },
+        minHeight: { base: "auto", md: "541px" },
+        padding: { 
+          base: "6", 
+          sm: "8", 
+          md: "12",
+          lg: "16" 
+        },
+        marginTop: { base: "16", md: "20" },
+        marginBottom: { base: "16", md: "20" },
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      })}
+    >
+      <h2
+        className={css({
+          fontSize: { base: "sm", md: "md" },
+          fontWeight: "bold",
+          lineHeight: "normal",
+          letterSpacing: { base: "8px", md: "12px" },
+          textAlign: { base: "center", md: "left" },
+          mb: "4",
+        })}
+      >
         #SALESCHANNELS
       </h2>
-      <h1 className={css({
-        fontSize: "5xl",
-        fontWeight: "bold",
-        lineHeight: "tight",
-        textAlign: "left",
-        mb: "8",
-      })}>
+      <h1
+        className={css({
+          fontSize: { base: "2xl", sm: "3xl", md: "4xl", lg: "5xl" },
+          fontWeight: "bold",
+          lineHeight: "tight",
+          textAlign: { base: "center", md: "left" },
+          mb: { base: "6", md: "8" },
+        })}
+      >
         Satış kanalları ile <br />
         <span className={css({ fontWeight: "normal" })}>
           dilediğiniz yerde satış <br />
           yapın.
         </span>
       </h1>
-      <p className={css({
-        fontSize: "lg",
-        fontWeight: "normal",
-        lineHeight: "snug",
-        textAlign: "left",
-        color: "gray.600",
-        mb: "8",
-        wordBreak: "break-words",
-      })}>
+      <p
+        className={css({
+          fontSize: { base: "sm", md: "md", lg: "lg" },
+          fontWeight: "normal",
+          lineHeight: "relaxed",
+          textAlign: { base: "center", md: "left" },
+          color: "gray.600",
+          mb: { base: "8", md: "10" },
+          maxWidth: "600px",
+        })}
+      >
         Arcu interdum dolor mattis sapien, justo fringilla. In pellentesque
-        convallis orci adipiscing erat facilisi pellentesque duis tellus. Sagittis blandit
-        euismod euismod urna, tincidunt ut egestas.
+        convallis orci adipiscing erat facilisi pellentesque duis tellus.
+        Sagittis blandit euismod euismod urna, tincidunt ut egestas.
       </p>
-      <div className={flex({
-        direction: "row",
-        gap: "8",
-        alignItems: "center",
-      })}>
-        <Button 
-          variant="primary"
-          size="lg"
-        >
-          GET STARTED
-        </Button>
-        <Link 
+      <div
+        className={flex({
+          direction: { base: "column", sm: "row" },
+          gap: { base: "4", sm: "6", md: "8" },
+          alignItems: { base: "stretch", sm: "center" },
+          justifyContent: { base: "center", md: "flex-start" },
+        })}
+      >
+        <Link href="/subscribe">
+          <Button
+            variant="primary"
+            size={{ base: "lg", sm: "lg", lg: "md" }}
+            fullWidth={{ base: true, sm: false }}
+          >
+            GET STARTED
+          </Button>
+        </Link>
+        <Link
           href="/contact-sales"
           className={css({
             color: "text.primary",
             fontWeight: "semibold",
-            fontSize: "md",
+            fontSize: { base: "sm", md: "md" },
             textDecoration: "none",
             position: "relative",
             transition: "color 0.3s ease-in-out",
@@ -87,7 +110,11 @@ const SliderContent: React.FC = () => {
             },
             display: "inline-flex",
             alignItems: "center",
+            justifyContent: { base: "center", md: "flex-start" },
             gap: "2",
+            textAlign: { base: "center", md: "left" },
+            width: { base: "100%", sm: "auto" },
+            padding: { base: "2", sm: "0" },
           })}
         >
           <span>Start a conversation with the sales team</span>
